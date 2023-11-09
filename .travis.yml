@@ -29,5 +29,6 @@ install:
   - phpenv rehash
 
 script:
+  - phpenv versions
   - phpenv global 7.3
   - php --version
