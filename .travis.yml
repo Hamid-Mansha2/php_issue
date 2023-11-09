@@ -30,5 +30,9 @@ install:
 
 script:
   - phpenv versions
+  - sudo update-alternatives --set php /usr/bin/php7.3
+  - source ~/.phpenv/versions/7.3/env
+  - phpenv rehash
+  - phpenv versions
   - phpenv global 7.3
   - php --version
