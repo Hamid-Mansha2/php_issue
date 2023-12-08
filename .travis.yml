@@ -18,4 +18,5 @@ before_script:
   - php --version
 
 script:
+  - unset -v PHPENV_VERSION && phpenv global 7.3
   - echo "Your build script goes here"
