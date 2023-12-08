@@ -1,36 +1,21 @@
-os: linux
+language: php
 dist: focal
 
-language: php
-
 php:
-  - '7.4'
-
-services:
-  - postgresql
-
-addons:
-  postgresql: "12"
-  apt:
-    packages:
-      - postgresql-12-postgis-3
-    sources:
-      - sourceline: 'ppa:ondrej/php'
-        update: true
+  - 7.3
 
 before_install:
-  - sudo apt-get install -y aspell aspell-en
-  - sudo apt-get install libpng16-16
-  - sudo ldconfig
+  - apt-get install -y aspell aspell-en
+  - apt-get install libpng16-16
+  - ldconfig
+  - add-apt-repository ppa:ondrej/php -y
+  - apt-get update
 
 install:
-  - sudo apt-get install php7.3 php7.3-mbstring php7.3-xml php7.3-tokenizer php7.3-json php7.3-bcmath php7.3-ctype php7.3-gd php7.3-zip php7.3-pgsql
-  - sudo update-alternatives --set php /usr/bin/php7.3
-  - phpenv rehash
+  - apt-get install php7.3 php7.3-mbstring php7.3-xml php7.3-tokenizer php7.3-json php7.3-bcmath php7.3-ctype php7.3-gd php7.3-zip php7.3-pgsql
+
+before_script:
+  - php --version
 
 script:
-  - phpenv versions
-  - sudo update-alternatives --set php /usr/bin/php7.3
-  - phpenv rehash
-  - phpenv versions
-  - php --version
+  - echo "Your build script goes here"
