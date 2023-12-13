@@ -1,10 +1,4 @@
-language: php
-
-php:
-  - 7.3.3
-
-dist: focal
-
-script:
-  - php --version
-  - # Your test commands go here
+include:
+  - dist: jammy
+    php:
+      - '8.3'
