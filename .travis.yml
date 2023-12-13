@@ -1,4 +1,10 @@
 language: php
-  - dist: jammy
-    php:
-      - '8.3'
+
+jobs:
+  include:
+    - dist: jammy
+      php: '8.3'
+
+script:
+  - php --version
+
