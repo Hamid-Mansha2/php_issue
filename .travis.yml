@@ -1,4 +1,4 @@
-include:
+language: php
   - dist: jammy
     php:
       - '8.3'
