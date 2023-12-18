@@ -1,10 +1,10 @@
+arch: amd64
+os: linux
+dist: focal
+
+sudo: required
+
 language: php
 
-jobs:
-  include:
-    - dist: jammy
-      php: '8.3'
-
-script:
-  - php --version
-
+php:
+  - 7.3.33
